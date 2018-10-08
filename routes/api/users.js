@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const gravatar = require('gravatar');
+
 const User = require('../../models/User');
 
 // @route   POST api/users/register
