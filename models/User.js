@@ -1,7 +1,25 @@
 const mongoose = require('mongoose');
 const Schema = mongooseSchema;
 
-// Create User Schema
+// Creates User Schema
 const UserSchema = new Schema({
-    // Schema goes here
+  name: {
+      type: String,
+      required: true
+  },
+  email: {
+      type: String,
+      required: true
+  },
+  password: {
+      type: String,
+      required: true
+  },
+  avatar: {
+      type: String,
+  },
+  dateCreated: {
+      type: Date,
+      default: Date.now
+  } 
 })
