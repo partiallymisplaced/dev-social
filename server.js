@@ -8,6 +8,10 @@ const posts = require('./routes/api/posts');
 
 const app = express();
 
+// Body-parser middleware
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 // DB config 
 const db = require('./env').mongoURI;
 
@@ -16,7 +20,6 @@ mongoose
     .connect(db)
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
-
 
 // Our first route
 app.get('/', (req, res) => res.send('Hello World'));
